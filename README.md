@@ -7,7 +7,8 @@ clean Vagrantfile.
 
 ## Running the demo
 
-You need vagrant & virtualbox for this demo. Also you need librarian-puppet gem and do a librarian-puppet install.Tested in OSX Yosemite with vagrant 1.7.2 and virtualbox 4.3.24.
+You need vagrant & virtualbox for this demo. Also you need to run bundle install to fetch the required gems and then do a 
+librarian-puppet install.Tested in OSX Yosemite with vagrant 1.7.2 and virtualbox 4.3.24.
 
 Just run vagrant up and then access using private IPs.
 
