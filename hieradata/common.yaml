@@ -1,0 +1,12 @@
+---
+varnish::listen_port: '80'
+varnish::backend_port: '80'
+varnish::varnish_version: '4.0'
+varnish::secret: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx31337'
+varnish::admin_listen: '0.0.0.0'
+varnish::admin_port: '6082'
+varnish::storage_file: '/opt/varnish_storage.bin'
+varnish::vcl_reload: '/usr/sbin/varnish_reload_vcl'
+varnish::package_ensure: '4.0.3-3.el7'
+
+

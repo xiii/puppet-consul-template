@@ -1,0 +1,7 @@
+.vagrant/
+modules/
+.tmp
+.idea/
+.librarian/
+.bundle/
+.vendor/

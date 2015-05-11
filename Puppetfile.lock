@@ -1,0 +1,46 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    KyleAnderson-consul (1.0.0)
+      nanliu-staging (< 2.0.0, >= 0.4.0)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+    bashtoni-varnish (2.3.0)
+      puppetlabs-stdlib (>= 3.2.0)
+    jfryman-nginx (0.2.6)
+      puppetlabs-apt (< 2.0.0, >= 1.0.0)
+      puppetlabs-concat (< 2.0.0, >= 1.1.1)
+      puppetlabs-stdlib (< 5.0.0, >= 4.2.0)
+    nanliu-staging (1.0.3)
+    puppetlabs-apt (1.8.0)
+      puppetlabs-stdlib (>= 2.2.1)
+    puppetlabs-firewall (1.5.0)
+    puppetlabs-stdlib (4.6.0)
+    stahnma-epel (1.0.2)
+
+GIT
+  remote: git@github.com:gdhbashton/puppet-consul_template.git
+  ref: master
+  sha: 20f90d03ec31c36a9d1635ad719e0a1821257916
+  specs:
+    gdhbashton-consul_template (0.2.0)
+      nanliu-staging (>= 0.4.0)
+      puppetlabs-concat (>= 1.1.0)
+      puppetlabs-stdlib (>= 1.0.0)
+
+GIT
+  remote: git@github.com:puppetlabs/puppetlabs-concat.git
+  ref: 1.2.x
+  sha: 253f4975c72aaa812579576da369f57194074c08
+  specs:
+    puppetlabs-concat (1.2.1)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+
+DEPENDENCIES
+  KyleAnderson-consul (>= 0)
+  bashtoni-varnish (>= 0)
+  gdhbashton-consul_template (>= 0)
+  jfryman-nginx (>= 0)
+  puppetlabs-concat (>= 0)
+  puppetlabs-firewall (>= 0)
+  stahnma-epel (>= 0)
+
