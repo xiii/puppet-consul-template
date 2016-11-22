@@ -3,8 +3,8 @@
   - yaml
 
 :hierarchy:
+  - "%{role}"
   - "common"
 
 :yaml:
   :datadir: '/vagrant/hieradata'
-

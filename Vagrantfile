@@ -3,11 +3,15 @@
 VAGRANTFILE_API_VERSION = "2"
 
 #
-# Quick and dirty  
+# Quick and dirty
 #
 
 $bootstrap = <<SCRIPT
-        echo '10.100.10.101 consul' >> /etc/hosts
+        systemctl disable firewalld && systemctl stop firewalld
+        grep -q "10.100.10.101" /etc/hosts || echo '10.100.10.101 publisher' >> /etc/hosts
+        grep -q "10.100.10.102" /etc/hosts || echo '10.100.10.102 consumer1' >> /etc/hosts
+        grep -q "10.100.10.103" /etc/hosts || echo '10.100.10.103 consumer2' >> /etc/hosts
+
 SCRIPT
 
 
@@ -15,18 +19,17 @@ SCRIPT
 # Declare all our boxes and their private IP & puppet role
 #
 
-consul_boxes = [
-  { name: :consul,  ip: '10.100.10.101', role: 'consul'},
-  { name: :node1,   ip: '10.100.10.102', role: 'web' },
-  { name: :node2,   ip: '10.100.10.103', role: 'web'},
-  { name: :varnish, ip: '10.100.10.104', role: 'varnish'},
+rabbit_boxes = [
+  { name: :publisher,   ip: '10.100.10.101', role: 'publisher'},
+  { name: :consumer1,   ip: '10.100.10.102', role: 'consumer1' },
+  { name: :consumer2,   ip: '10.100.10.103', role: 'consumer2'},
 ]
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
-  
-  consul_boxes.each do |i|
+
+  rabbit_boxes.each do |i|
    config.vm.define i[:name] do |node|
 
      node.vm.network :private_network, ip: i[:ip]
