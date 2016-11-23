@@ -28,6 +28,7 @@ rabbit_boxes = [
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
+  config.vm.box_version = '1.0.1'
 
   rabbit_boxes.each do |i|
    config.vm.define i[:name] do |node|
