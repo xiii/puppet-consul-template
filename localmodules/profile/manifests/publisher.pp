@@ -1,6 +1,7 @@
 class profile::publisher {
 
   $description = hiera('description')
+  $rabbitmq_version = hiera('rabbitmq_version')
 
   notice('------------------------------------------------------')
   notice("Description: ${description}")
@@ -14,7 +15,7 @@ class profile::publisher {
   class { '::erlang': }
   ->
   class { '::rabbitmq':
-    package_ensure              => '3.3.5-28.el7',
+    package_ensure              => $rabbitmq_version,
   }
 
 }
